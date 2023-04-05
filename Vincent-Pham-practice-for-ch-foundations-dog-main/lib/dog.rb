@@ -22,21 +22,20 @@ class Dog
   def favorite_foods
     @favorite_foods
   end
-    #setter
-    def age= number
-        @age= number
-    end
-    #bark, conditional getter
-    def bark 
-        if @age >4 
-            return @bark.upcase 
-        else 
-            return @bark.downcase 
-        end
-    end
-        
-
-    def favorite_food?(string)
-        @favorite_foods.any? {|food| food.downcase == string.downcase}
-    end
+  #setter
+  def age= number
+      @age= number
+  end
+  #bark, conditional getter
+  def bark 
+      if @age >4 
+          return @bark.upcase 
+      else 
+          return @bark.downcase 
+      end
+  end
+      
+  def favorite_food?(string)
+      @favorite_foods.any? {|food| food.downcase == string.downcase}
+  end
 end

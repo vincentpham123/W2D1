@@ -1,5 +1,4 @@
 class Bootcamp
-#   @@grades = Hash.new{|h,k| h[k]=[]}
 
   #initial values
   def initialize(name,slogan, student_capacity)
@@ -28,12 +27,12 @@ class Bootcamp
   end
   #class setters
   def hire(teacher)
-    @teachers<<teacher
+    self.teachers<<teacher
   end
 
   def enroll(student)
-    if @students.length<@student_capacity
-        @students<<student
+    if self.students.length<self.student_capacity
+        self.students<<student
         return true
     else 
         return false
@@ -41,23 +40,23 @@ class Bootcamp
   end
 
   def enrolled?(name)
-        @students.any? {|student| name==student}
+        self.students.any? {|student| name==student}
   end
 
   # part 2
 
   def student_to_teacher_ratio
     #return ratio of students to the amount of teachers, ronded to nearest one
-    ratio= @students.length/@teachers.length
+    ratio= self.students.length/self.teachers.length
     return ratio.round()
   end
 
   def add_grade(student, number)
-    if !@students.include?(student)
-        return false
+    if enrolled?(student)
+      @grades[student] << number
+      return true
     else
-        @grades[student]<<number
-        return true
+      return false
     end
     end
 

@@ -57,7 +57,7 @@ class Array
         result = Array.new(height){[0]*width}
         (0...width).each do |col|
             (0...height).each do |row|
-                result[row][col] = self[col][row]
+                result[col][row] = self[row][col]
             end
         end
         result
